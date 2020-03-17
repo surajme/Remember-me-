@@ -142,7 +142,10 @@ public class EasyLevel extends Fragment {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             isCancelled = true;
-                            getFragmentManager().popBackStack();
+                            //Go to Main Page
+                            FragmentTransaction fr = getFragmentManager().beginTransaction();
+                            fr.replace(R.id.layoutFragment, new Start());
+                            fr.addToBackStack(null).commit();
                         }
                     });
                     pause.show();

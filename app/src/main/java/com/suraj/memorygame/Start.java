@@ -33,7 +33,7 @@ public class Start extends Fragment {
                 rootView.findViewById(R.id.easy).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        fragmentTrasaction(new EasyLevel());
+                        fragmentTrasaction(new PlayerName());
                     }
                 });
                 rootView.findViewById(R.id.leaderboard).setOnClickListener(new View.OnClickListener() {
