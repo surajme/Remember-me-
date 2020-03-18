@@ -1,11 +1,8 @@
 package com.suraj.memorygame;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -13,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -22,9 +17,6 @@ import org.jetbrains.annotations.NotNull;
 public class PlayerName extends Fragment {
 
     EditText playerName_et;
-    Button btnPlay;
-    String playerName;
-
 
 
     @Override
@@ -49,13 +41,12 @@ public class PlayerName extends Fragment {
                     playerName_et.setError("Enter some value!!");
                     return;
 
-                }else {
+                } else {
 
                     //Bundle to send data
                     Bundle bundle = new Bundle();
                     bundle.putString("Name", playerName);
                     FragmentTransaction fr = getFragmentManager().beginTransaction();
-
                     EasyLevel mfragment = new EasyLevel();
                     mfragment.setArguments(bundle);
                     fr.replace(R.id.layoutFragment, mfragment);
@@ -69,8 +60,6 @@ public class PlayerName extends Fragment {
 
         return rootView;
     }
-
-
 
 }
 

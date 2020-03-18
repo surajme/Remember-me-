@@ -52,8 +52,6 @@ public class Result<runnable> extends Fragment {
         Bundle b=getArguments();
         if (b.getString("Data").equals("win")){
 
-            new SoundPlayer(getContext()).playSound("winner.mp3");
-
             if (Integer.valueOf(b.get("level").toString()) == Constants.LEVEL_EASY){
                 if (Integer.valueOf(b.get("Time").toString()) < bestEasyScore){
                     editor.putInt(Constants.EASY_HIGH_KEY,Integer.valueOf(b.get("Time").toString())).apply();
