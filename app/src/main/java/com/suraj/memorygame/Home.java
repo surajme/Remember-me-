@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity{
-    private String playerName;
 
 
     @Override
@@ -17,7 +16,6 @@ public class Home extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.add(R.id.layoutFragment, new Result());
         transaction.replace(R.id.layoutFragment, new Start());
         transaction.commit();
     }
@@ -31,14 +29,14 @@ public class Home extends AppCompatActivity{
         counter++;
         if (currentFragment instanceof Start){
             AlertDialog.Builder exit = new AlertDialog.Builder(this);
-            exit.setTitle("Do you really want to go?");
+            exit.setTitle("Do you really want to leave?");
             exit.setPositiveButton("Yes, please.", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     finish();
                 }
             });
-            exit.setNegativeButton("Umm, I can stay.", new DialogInterface.OnClickListener() {
+            exit.setNegativeButton("I want to stay!", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Toast.makeText(Home.this, "Welcome back.", Toast.LENGTH_SHORT).show();

@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.suraj.memorygame.Adapters.EasyLevelAdapter;
 import com.wajahatkarim3.easyflipview.EasyFlipView;
@@ -29,8 +30,6 @@ import java.util.TimeZone;
 
 public class EasyLevel extends Fragment {
 
-    //Timer
-    TextView tvTimer;
     long startTime;
     private Handler customHandler = new Handler();
     long counterStartTime = 0;
@@ -39,6 +38,7 @@ public class EasyLevel extends Fragment {
     private RecyclerView EasyLevelRecyclerView;
     private TextView tvEasylevelcounter;
     public ArrayList<Integer> cards;
+
     public int CARDS[] = {
             R.drawable.facebook,
             R.drawable.instagram,
@@ -53,6 +53,7 @@ public class EasyLevel extends Fragment {
             R.drawable.snapchat,
             R.drawable.youtube
     };
+
     EasyFlipView flippedCard;
     public static long RemainingTime = Constants.EASY_TIME;
     public boolean isPaused, isCancelled;
@@ -92,9 +93,10 @@ public class EasyLevel extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.fragment_easy_level, container, false);
 
-        playerName = (TextView)rootView.findViewById(R.id.displayPlayerName);
+//        playerName = (TextView)rootView.findViewById(R.id.displayPlayerName);
         Bundle bundle = getArguments();
-        playerName.setText(String.valueOf(bundle.getString("Name")));
+        Toast.makeText(getContext(), "Welcome " +bundle.getString("Name"),Toast.LENGTH_LONG).show();
+//        playerName.setText(String.valueOf(bundle.getString("Name")));
 
 
         tvEasylevelcounter = rootView.findViewById(R.id.easylevelcounter);
@@ -148,6 +150,7 @@ public class EasyLevel extends Fragment {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             isCancelled = true;
+
                             //Go to Main Page
                             FragmentTransaction fr = getFragmentManager().beginTransaction();
                             fr.replace(R.id.layoutFragment, new Start());
@@ -280,10 +283,6 @@ public class EasyLevel extends Fragment {
         super.onDestroy();
         fragmentTransaction(b);
     }
-    /* @Override
-    public void onFinish() {
-
-    }*/
 
     private Runnable updateTimerThread = new Runnable() {
         public void run() {

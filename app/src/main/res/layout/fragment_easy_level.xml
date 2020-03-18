@@ -35,17 +35,6 @@
         android:id="@+id/easylevelview"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/displayPlayerName"
-        android:text="Hey  "
-        android:gravity="center"
-        android:layout_below="@+id/easylevelview"
-        />
-
-
-
 </RelativeLayout>
 
 

@@ -33,12 +33,14 @@ public class Start extends Fragment {
                 rootView.findViewById(R.id.easy).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        //Opens Playername Fragment
                         fragmentTrasaction(new PlayerName());
                     }
                 });
                 rootView.findViewById(R.id.leaderboard).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        //Opens Leaderboard Fragement
                         fragmentTrasaction(new Leaderboard());
                     }
                 });
@@ -55,5 +57,4 @@ public class Start extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
 }

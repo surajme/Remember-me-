@@ -30,8 +30,6 @@ public class PlayerName extends Fragment {
 
 
 
-
-
         btnFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +49,6 @@ public class PlayerName extends Fragment {
                     mfragment.setArguments(bundle);
                     fr.replace(R.id.layoutFragment, mfragment);
                     fr.commit();
-
                 }
 
             }

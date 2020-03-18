@@ -19,6 +19,8 @@ public class Result<runnable> extends Fragment {
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
     private int bestEasyScore;
+    private TextView playerName;
+
 
 
 
