@@ -34,6 +34,7 @@ public class EasyLevel extends Fragment {
     long startTime;
     private Handler customHandler = new Handler();
     long counterStartTime = 0;
+    private TextView playerName;
 
     private RecyclerView EasyLevelRecyclerView;
     private TextView tvEasylevelcounter;
@@ -90,6 +91,11 @@ public class EasyLevel extends Fragment {
                              Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.fragment_easy_level, container, false);
+
+        playerName = (TextView)rootView.findViewById(R.id.displayPlayerName);
+        Bundle bundle = getArguments();
+        playerName.setText(String.valueOf(bundle.getString("Name")));
+
 
         tvEasylevelcounter = rootView.findViewById(R.id.easylevelcounter);
         EasyLevelRecyclerView = rootView.findViewById(R.id.easylevelview);

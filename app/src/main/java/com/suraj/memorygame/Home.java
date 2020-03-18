@@ -9,13 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity{
+    private String playerName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.layoutFragment, new Result());
+//        transaction.add(R.id.layoutFragment, new Result());
         transaction.replace(R.id.layoutFragment, new Start());
         transaction.commit();
     }
